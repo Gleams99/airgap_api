@@ -62,6 +62,13 @@ poetry run pytest -m tokens
 poetry run pytest -m favorites
 ```
 
+**Note:** If the pip setup was followed then instead of `poetry run pytest` in the command above, use `.venv/bin/pytest`.
+
+E.g.
+```shell
+.venv/bin/pytest -m api
+```
+
 ## Under the hood
 
 ### API Response Validation
