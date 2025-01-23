@@ -1,0 +1,53 @@
+[project]
+name = "airgap-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Gleams API user",email = "Stephen.Swannell+ghapi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "pytest (>=8.3.4,<9.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "pytest-parametrize (>=1.3.0,<2.0.0)",
+    "pytest-xdist (>=3.6.1,<4.0.0)",
+    "strenum (>=0.4.15,<0.5.0)",
+    "tenacity (>=9.0.0,<10.0.0)",
+    "pydantic (>=2.10.5,<3.0.0)",
+    "pytest-html (>=4.1.1,<5.0.0)",
+    "pytest-check (>=2.4.1,<3.0.0)",
+    "markdown (>=3.7,<4.0)",
+    "pytest-env (>=1.1.5,<2.0.0)",
+    "pytest-dotenv (>=0.5.2,<0.6.0)"
+]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = [
+    "-rfExXpw",
+    "--strict-markers",
+    "--strict-config",
+    "--html=report.html",
+    "--self-contained-html"
+]
+markers = [
+    "wip",
+    "slow",
+    "api",
+    "airports",
+    "tokens",
+    "favorites"
+]
+env_files = [
+    ".env"
+]
+
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
